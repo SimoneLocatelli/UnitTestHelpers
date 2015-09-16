@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.user
+*.suo
+/Output/Debug/AnyCPU
+/TestResults/10c03623-65c4-480b-85db-b246cb87baea
+/Source/UnitTestHelpers/obj/Debug
+/Source/UnitTestHelpers.Tests/obj/Debug

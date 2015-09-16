@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <ConfigurationDir>$(SolutionDir)Configuration\</ConfigurationDir>
+    <DocumentationDir>$(SolutionDir)Documentation\</DocumentationDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <CodeAnalysisRuleSet>$(ConfigurationDir)CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>$(DocumentationDir)\$(MSBuildProjectName).xml</DocumentationFile>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <OutputPath>$(SolutionDir)\Output\$(Configuration)\$(Platform)</OutputPath>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <RootNamespace>$(MSBuildProjectName)</RootNamespace>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+</Project>

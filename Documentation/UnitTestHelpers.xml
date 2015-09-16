@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UnitTestHelpers</name>
+    </assembly>
+    <members>
+        <member name="T:UnitTestHelpers.BaseTestClass">
+            <summary>
+            Provides helpers methods to simplify the design of unit tests.
+            </summary>
+        </member>
+        <member name="M:UnitTestHelpers.BaseTestClass.TestExpectedArgumentException``1(System.Action,``0)">
+            <summary>
+            Verifies that the expected exception is thrown during the execution of the input lambda expression.
+            </summary>
+            <typeparam name="TException">The type of the exception expected.</typeparam>
+            <param name="action">The action that will be executed.</param>
+            <param name="exception">The exception instance initialized with the data, such as the message, that we expect to find
+            in the exception we want to test.</param>
+            <exception cref="T:System.ArgumentNullException">The action can't be null.</exception>
+            <exception cref="T:System.ArgumentException">The input exception can't be null.</exception>
+            <exception cref="T:UnitTestHelpers.NoExceptionRaisedException">Throw when the lambda expression succeed or it throws a different type of excpetion</exception>
+        </member>
+        <member name="M:UnitTestHelpers.BaseTestClass.TestExpectedArgumentException``1(System.Action,System.String)">
+            <summary>
+            Verifies that the expected exception is thrown during the execution of the input lambda expression.
+            </summary>
+            <typeparam name="TException">The type of the exception expected.</typeparam>
+            <param name="action">The action that will be executed.</param>
+            <param name="parameterName">Name of the parameter contained in the ArgumentException.</param>
+            <exception cref="T:System.ArgumentException">The input exception can't be null.</exception>
+            <exception cref="T:System.ArgumentNullException">The action can't be null.</exception>
+            <exception cref="T:UnitTestHelpers.NoExceptionRaisedException">Throw when the lambda expression succeed or it throws a different type of excpetion</exception>
+        </member>
+        <member name="M:UnitTestHelpers.BaseTestClass.TestExpectedException``1(System.Action,System.String)">
+            <summary>
+            Verifies that the expected exception is thrown during the execution of the input lambda expression.
+            </summary>
+            <typeparam name="TException">The type of the exception expected.</typeparam>
+            <param name="action">The action that will be executed.</param>
+            <param name="exceptionMessage">The exception message.</param>
+            <exception cref="T:System.ArgumentException">The input exception can't be null.</exception>
+            <exception cref="T:System.ArgumentNullException">The action can't be null.</exception>
+            <exception cref="T:UnitTestHelpers.NoExceptionRaisedException">Throw when the lambda expression succeed or it throws a different type of excpetion</exception>
+        </member>
+        <member name="M:UnitTestHelpers.BaseTestClass.TestExpectedException``1(System.Action,``0)">
+            <summary>
+            Verifies that the expected exception is thrown during the execution of the input lambda expression.
+            </summary>
+            <typeparam name="TException">The type of the exception expected.</typeparam>
+            <param name="action">The action that will be executed.</param>
+            <param name="exception">The exception instance initialized with the data, such as the message, that we expect to find
+            in the exception we want to test.</param>
+            <exception cref="T:System.ArgumentNullException">The action can't be null.</exception>
+            <exception cref="T:System.ArgumentException">The input exception can't be null.</exception>
+            <exception cref="T:UnitTestHelpers.NoExceptionRaisedException">Throw when the lambda expression succeed or it throws a different type of excpetion</exception>
+        </member>
+        <member name="M:UnitTestHelpers.BaseTestClass.ThrowNoExceptionRaisedException``1">
+            <summary>
+            Throws the no exception raised exception.
+            </summary>
+            <typeparam name="TException">The type of the exception.</typeparam>
+        </member>
+        <member name="T:UnitTestHelpers.NoExceptionRaisedException">
+            <summary>
+            This exception is raised when a specif exception type is expected
+            but it's not thrown.
+            </summary>
+        </member>
+        <member name="M:UnitTestHelpers.NoExceptionRaisedException.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnitTestHelpers.NoExceptionRaisedException"/> class.
+            </summary>
+            <param name="expectedExceptionType">Expected type of the exception.</param>
+            <exception cref="T:System.ArgumentNullException">
+            expectedExceptionType
+            or
+            expectedExceptionType
+            </exception>
+        </member>
+        <member name="M:UnitTestHelpers.NoExceptionRaisedException.#ctor(System.Type,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnitTestHelpers.NoExceptionRaisedException"/> class.
+            </summary>
+            <param name="expectedExceptionType">Expected type of the exception.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:UnitTestHelpers.NoExceptionRaisedException.#ctor(System.Type,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnitTestHelpers.NoExceptionRaisedException"/> class.
+            </summary>
+            <param name="expectedExceptionType">Expected type of the exception.</param>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:UnitTestHelpers.NoExceptionRaisedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnitTestHelpers.NoExceptionRaisedException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="P:UnitTestHelpers.NoExceptionRaisedException.ExpectedExceptionType">
+            <summary>
+            Gets or sets the expected type of the exception.
+            </summary>
+            <value>
+            The expected type of the exception.
+            </value>
+        </member>
+        <member name="T:UnitTestHelpers.Strings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:UnitTestHelpers.Strings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:UnitTestHelpers.Strings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:UnitTestHelpers.Strings.NoExceptionRaisedExceptionDefaultMessage">
+            <summary>
+              Looks up a localized string similar to The expected exception has not been thrown. Check the ExpectedExceptionType property to see the expected type..
+            </summary>
+        </member>
+        <member name="P:UnitTestHelpers.Strings.NoExceptionRaisedExceptionTypeInvalid">
+            <summary>
+              Looks up a localized string similar to The input type must inherit from the type Exception..
+            </summary>
+        </member>
+        <member name="P:UnitTestHelpers.Strings.TestExpectedArgumentExceptionParameterNameInvalid">
+            <summary>
+              Looks up a localized string similar to The parameter name cannot be null, empty or composed only by spaces..
+            </summary>
+        </member>
+        <member name="P:UnitTestHelpers.Strings.TestExpectedExceptionExceptionInvalid">
+            <summary>
+              Looks up a localized string similar to The expected exception can&apos;t be null.
+            </summary>
+        </member>
+        <member name="P:UnitTestHelpers.Strings.TestExpectedExceptionMessageInvalid">
+            <summary>
+              Looks up a localized string similar to The exception message cannot be null, empty or composed only by spaces..
+            </summary>
+        </member>
+    </members>
+</doc>
